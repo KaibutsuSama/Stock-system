@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.kaibutsusama.trade</groupId>
+    <artifactId>stock-system</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>stock-system-gateway</module>
+        <module>stock-system-user</module>
+    </modules>
+
+    <!-- 自定义属性， 统一管理版本 -->
+    <properties>
+        <spring.cloud.alibaba.version>2.1.1.RELEASE</spring.cloud.alibaba.version>
+        <spring-cloud-gateway.version>2.1.2.RELEASE</spring-cloud-gateway.version>
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
+    </properties>
+
+    <dependencies>
+        <!-- lombok 插件 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Cloud Alibaba 依赖组件 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud 普通依赖组件 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-commons-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Gateway组件 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-gateway-dependencies</artifactId>
+                <version>${spring-cloud-gateway.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Boot 组件 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <!-- 设置resources资源目录 -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        <!-- 设置maven 编译插件 -->
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <target>${maven.compiler.target}</target>
+                    <source>${maven.compiler.source}</source>
+                    <encoding>UTF-8</encoding>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <!-- Spring Boot 打包插件 -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
