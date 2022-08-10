@@ -11,6 +11,7 @@
     <modules>
         <module>stock-system-gateway</module>
         <module>stock-system-user</module>
+        <module>cat-demo</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->
