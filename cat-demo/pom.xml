@@ -13,6 +13,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>cat-demo-gateway</module>
+        <module>cat-demo-order</module>
+        <module>cat-demo-account</module>
+        <module>cat-demo-stock</module>
     </modules>
 
     <dependencies>
@@ -35,9 +38,34 @@
         <dependency>
             <groupId>com.dianping.cat</groupId>
             <artifactId>cat-client</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
         </dependency>
 
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
