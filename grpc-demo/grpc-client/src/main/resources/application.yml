@@ -1,0 +1,14 @@
+#Server Config
+server:
+  port: 9000
+spring:
+  application:
+    name: grpc-client
+#Grpc Config
+grpc:
+  client:
+    grpc-server:
+      address: 'static://localhost:9999'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext

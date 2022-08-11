@@ -2,7 +2,7 @@
 
 ## 1. 简单介绍
 
-基于`SpringBoot2.X`、`SpringCloud`、`SpringOAuth2`、``开发的纯后端微服务分布式架构系统，不包含前端页面。
+基于`SpringBoot2.X`、`SpringCloud`、`SpringOAuth2`、开发的纯后端微服务分布式架构系统，不包含前端页面。
 
 > 在功能层面以StockSystem为主题去围绕着实现一些功能，整合多种 Java 常见的微服务技术中间件等
 
@@ -30,23 +30,23 @@ Linux CentOS7 / Idea / Mysql 5.7 / JDK1.8
 
 ## 4. 技术解决方案
 
-| 方案         | 技术                           | 文档 |
-| ------------ | ------------------------------ | ---- |
-| 通讯         | Boot + gRpc + Protobuf + Netty |      |
-| 统一日志     | ElasticSearch + Logstash + Kibana  |      |
-| 统一鉴权     | OAuth2 + Redis + TokenEhancer      |      |
-| 分布式锁     | Spring Integration Redis       |      |
-| 服务管理     | Nacos + MariaDB + Nginx        |      |
-| 熔断与降级   | Sentinel + Dashboard           |      |
-| 网关         | SpringCoud Gateway             |      |
-| 数据源       | JPA / MyBatis                  |      |
-| 分布式事务   | Seata Server                   |      |
-| 分布式搜索   | ElasticSearch                  |      |
-| 异步消息架构 | RocketMQ                       |      |
-| 任务调度     | XXL-JOB                        |      |
-| 热点缓存     | Redis                          |      |
-| 文件存储     | Ceph                           |      |
-| 链路监控     | Cat                            |      |
+| 方案     | 技术                                | 文档  |
+|--------|-----------------------------------|-----|
+| 通讯     | Boot + gRpc + Protobuf + Netty    |     |
+| 统一日志   | ElasticSearch + Logstash + Kibana |     |
+| 统一鉴权   | OAuth2 + Redis + TokenEhancer     |     |
+| 分布式锁   | Spring Integration Redis          |     |
+| 服务管理   | Nacos + MariaDB + Nginx           |     |
+| 熔断与降级  | Sentinel + Dashboard              |     |
+| 网关     | SpringCoud Gateway                |     |
+| 数据源    | JPA / MyBatis                     |     |
+| 分布式事务  | Seata Server                      |     |
+| 分布式搜索  | ElasticSearch                     |     |
+| 异步消息架构 | RocketMQ                          |     |
+| 任务调度   | XXL-JOB                           |     |
+| 热点缓存   | Redis                             |     |
+| 文件存储   | Ceph                              |     |
+| 链路监控   | Cat                               |     |
 
 ## 5. 程序架构
 
