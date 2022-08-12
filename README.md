@@ -30,23 +30,23 @@ Linux CentOS7 / Idea / Mysql 5.7 / JDK1.8
 
 ## 4. 技术解决方案
 
-| 方案     | 技术                                | 文档  |
-|--------|-----------------------------------|-----|
-| 通讯     | Boot + gRpc + Protobuf + Netty    |     |
-| 统一日志   | ElasticSearch + Logstash + Kibana |     |
-| 统一鉴权   | OAuth2 + Redis + TokenEhancer     |     |
-| 分布式锁   | Spring Integration Redis          |     |
-| 服务管理   | Nacos + MariaDB + Nginx           |     |
-| 熔断与降级  | Sentinel + Dashboard              |     |
-| 网关     | SpringCoud Gateway                |     |
-| 数据源    | JPA / MyBatis                     |     |
-| 分布式事务  | Seata Server                      |     |
-| 分布式搜索  | ElasticSearch                     |     |
-| 异步消息架构 | RocketMQ                          |     |
-| 任务调度   | XXL-JOB                           |     |
-| 热点缓存   | Redis                             |     |
-| 文件存储   | Ceph                              |     |
-| 链路监控   | Cat                               |     |
+| 方案     | 技术                                   | 文档                                                                                                                                                                                                          |
+|--------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 通讯     | SpringBoot + gRpc + Protobuf + Netty | [Springboot](https://spring.io/projects/spring-boot) + [gRpc](https://grpc.io/docs/) + [Protobuf](https://developers.google.com/protocol-buffers/docs/overview) + [Netty](https://netty.io/wiki/index.html) |
+| 统一日志   | ElasticSearch + Logstash + Kibana    | [ElasticSearch + Logstash + Kibana](https://www.elastic.co/guide/index.html)                                                                                                                                |
+| 分布式锁   | Spring Integration Redis             |                                                                                                                                                                                                             |
+| 服务管理   | Nacos + MariaDB + Nginx              |                                                                                                                                                                                                             |
+| 熔断与降级  | Sentinel + Dashboard                 |                                                                                                                                                                                                             |
+| 网关     | SpringCoud Gateway                   |                                                                                                                                                                                                             |
+| 统一鉴权   | OAuth2 + Redis                       | [OAuth2](https://oauth.net/2/) + [Redis](https://redis.io/)                                                                                                                                                 |
+| 数据源    | JPA / MyBatis                        |                                                                                                                                                                                                             |
+| 分布式事务  | Seata Server                         |                                                                                                                                                                                                             |
+| 分布式搜索  | ElasticSearch                        |                                                                                                                                                                                                             |
+| 异步消息架构 | RocketMQ                             |                                                                                                                                                                                                             |
+| 任务调度   | XXL-JOB                              |                                                                                                                                                                                                             |
+| 热点缓存   | Redis                                |                                                                                                                                                                                                             |
+| 文件存储   | Ceph                                 |                                                                                                                                                                                                             |
+| 链路监控   | Cat                                  |                                                                                                                                                                                                             |
 
 ## 5. 程序架构
 
