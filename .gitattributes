@@ -2,6 +2,9 @@
 *.java linguist-language=java
 *.html linguist-language=html
 *.css linguist-language=css
+*.yml linguist-language=YAML
+*.xml linguist-language=xml
+
 # Markdown
 *.md linguist-detectable=true
 *.md linguist-documentation=false
