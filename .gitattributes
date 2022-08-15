@@ -1,5 +1,8 @@
 *.sql linguist-language=TSQL
-
+*.java linguist-language=java
+*.html linguist-language=html
+*.css linguist-language=css
 # Markdown
 *.md linguist-detectable=true
 *.md linguist-documentation=false
+
