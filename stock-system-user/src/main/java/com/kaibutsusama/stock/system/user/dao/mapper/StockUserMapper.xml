@@ -16,7 +16,7 @@
         <result column="craeteTime" jdbcType="TIMESTAMP" property="craeteTime" />
     </resultMap>
 
-    <select id="getByUserNo" resultMap="BaseResultMap">
+    <select id="getByUserNo" resultMap="BaseResultMap">0
         select
             userNo, name, userPwd,
             phone, companyId, email,

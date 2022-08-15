@@ -16,6 +16,7 @@
         <module>stock-system-common-web</module>
         <module>stock-system-common-service</module>
         <module>stock-system-common-utils</module>
+        <module>stock-system-common-system</module>
     </modules>
 
     <properties>

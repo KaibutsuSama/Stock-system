@@ -3,7 +3,7 @@ package com.kaibutsusama.stock.system.user.controller;
 import com.kaibutsusama.stock.system.common.exception.ComponentException;
 import com.kaibutsusama.stock.system.entity.user.TradeUser;
 import com.kaibutsusama.stock.system.user.service.IStockUserService;
-import com.kaibutsusama.system.common.web.vo.ApiRespResult;
+import com.kaibutsusama.system.common.web.ApiRespResult;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
