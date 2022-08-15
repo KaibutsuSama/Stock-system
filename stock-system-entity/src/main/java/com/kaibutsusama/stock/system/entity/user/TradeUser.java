@@ -72,4 +72,20 @@ public class TradeUser extends BaseEntity {
      */
     private Date craeteTime;
 
+
+    /**
+     * 公司名称
+     */
+    private String companyName;
+
+    /**
+     * 机构类型
+     */
+    private String institutionTypeId;
+
+    /**
+     * 机构ID
+     */
+    private Long institutionId;
+
 }

@@ -1,8 +1,0 @@
-# Server name
-spring:
-  application:
-    name: grpc-server
-# Grpc name
-grpc:
-  server:
-    port: 9999

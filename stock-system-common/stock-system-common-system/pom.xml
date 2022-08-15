@@ -9,23 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stock-system-common-web</artifactId>
+    <artifactId>stock-system-common-system</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.kaibutsusama.trade</groupId>
-            <artifactId>stock-system-common-utils</artifactId>
+            <artifactId>stock-system-entity</artifactId>
             <version>1.0</version>
         </dependency>
-
-        <!-- 自动化校验 -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>6.0.16.Final</version>
-        </dependency>
     </dependencies>
-
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>

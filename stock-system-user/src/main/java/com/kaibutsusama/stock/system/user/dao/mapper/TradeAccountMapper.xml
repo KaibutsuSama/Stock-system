@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itcast.trade.bulls.stock.user.dao.ITradeAccountDao">
+
+  <resultMap id="BaseResultMap" type="com.kaibutsusama.stock.system.entity.user.TradeAccount">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="userId" jdbcType="BIGINT" property="userId" />
+    <result column="accountNo" jdbcType="VARCHAR" property="accountNo" />
+    <result column="balance" jdbcType="BIGINT" property="balance" />
+    <result column="tradeGroupId" jdbcType="BIGINT" property="tradeGroupId" />
+    <result column="activeTime" jdbcType="TIMESTAMP" property="activeTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="institutionTypeId" jdbcType="VARCHAR" property="institutionTypeId" />
+    <result column="institutionId" jdbcType="BIGINT" property="institutionId" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="tradeGroupName" jdbcType="VARCHAR" property="tradeGroupName" />
+  </resultMap>
+
+  <insert id="insert" parameterType="com.kaibutsusama.stock.system.entity.user.TradeAccount">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_trade_account (userId, accountNo, balance, 
+      tradeGroupId, activeTime, status, 
+      institutionTypeId, institutionId, companyId, 
+      userName, tradeGroupName)
+    values (#{userId,jdbcType=BIGINT}, #{accountNo,jdbcType=VARCHAR}, #{balance,jdbcType=BIGINT}, 
+      #{tradeGroupId,jdbcType=BIGINT}, #{activeTime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, 
+      #{institutionTypeId,jdbcType=VARCHAR}, #{institutionId,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}, 
+      #{userName,jdbcType=VARCHAR}, #{tradeGroupName,jdbcType=VARCHAR})
+  </insert>
+
+
+    <select id="getByAccountNo" resultMap="BaseResultMap" >
+        SELECT id, userId, accountNo, balance,
+          tradeGroupId, activeTime, status,
+          institutionTypeId, institutionId, companyId,
+          userName, tradeGroupName
+        FROM t_trade_account
+        WHERE accountNo = #{accountNo}
+    </select>
+    
+
+</mapper>
