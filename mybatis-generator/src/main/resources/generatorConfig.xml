@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="DB2Tables" >
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+
+        <!-- 通过type指定自定义的注释 -->
+        <commentGenerator type="com.kaibutsusama.mybatis.generator.custom.CustomCommentGenerator">
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.50.130:3306/stock_system?characterEncoding=UTF-8&amp;serverTimezone=UTC"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+
+        <javaModelGenerator targetPackage="com.kaibutsusama.stock.system.entity" targetProject="output">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.kaibutsusama.stock.system.dao"  targetProject="output">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.kaibutsusama.stock.system.dao"  targetProject="output">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table schema="trade_stock" tableName="t_trade_user" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"  >
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+            <columnOverride column="DATE_FIELD" property="startDate" />
+            <ignoreColumn column="FRED" />
+            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+
+        </table>
+
+        <table schema="trade_stock" tableName="t_trade_account" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"   >
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+            <columnOverride column="DATE_FIELD" property="startDate" />
+            <ignoreColumn column="FRED" />
+            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+        </table>
+
+
+    </context>
+</generatorConfiguration>
