@@ -1,0 +1,29 @@
+server:
+  port: 10680
+
+spring:
+  application:
+    name: stock-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.50.130:8848
+        service: stock-gateway
+    gateway:
+      discovery:
+        # ????????????????? http://service-id/user
+        locator:
+          enabled: true
+      # ????
+      routes:
+        - id: stock-user
+          uri: lb://stock-user
+          predicates:
+            - Path=/user/**
+        - id: stock-auth
+          uri: lb://stock-auth
+          predicates:
+            - Path=/oauth/**
+logging:
+  level:
+    root: info

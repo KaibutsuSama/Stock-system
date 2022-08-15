@@ -22,6 +22,73 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+        <!-- Spring Boot 监控组件依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- 公用数据层组件 -->
+        <dependency>
+            <groupId>com.kaibutsusama.trade</groupId>
+            <artifactId>stock-system-common-dao</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- 公用实体层依赖 -->
+        <dependency>
+            <groupId>com.kaibutsusama.trade</groupId>
+            <artifactId>stock-system-entity</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- 公用WEB层依赖 -->
+        <dependency>
+            <groupId>com.kaibutsusama.trade</groupId>
+            <artifactId>stock-system-common-web</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- 公用的工具依赖 -->
+        <dependency>
+            <groupId>com.kaibutsusama.trade</groupId>
+            <artifactId>stock-system-common-utils</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- feign 远程调用 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${spring-cloud-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+            <version>${spring-cloud-starter.version}</version>
+        </dependency>
+
+        <!-- OAUTH2 LoadBalance 功能相关依赖 -->
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
+            <version>0.7.6</version>
+        </dependency>
+
+        <!-- Spring Security OATUH2 鉴权相关依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <version>${spring-cloud-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
+            <version>${spring-cloud-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth.boot</groupId>
+            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+            <version>${spring-cloud-starter.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

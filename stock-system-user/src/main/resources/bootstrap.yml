@@ -1,0 +1,80 @@
+server:
+  port: 10681
+spring:
+  application:
+    name: stock-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.50.130:8848
+      config:
+        server-addr: 192.168.50.130:8848
+
+  # ?????? ??Druid
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.50.130:3306/stock_system?characterEncoding=UTF-8&serverTimezone=UTC
+    druid:
+      # ????????
+      # ???????????
+      initial-size: 5
+      min-idle: 5
+      maxActive: 20
+      # ?????????????
+      maxWait: 60000
+      # ???????????????????????????????
+      timeBetweenEvictionRunsMillis: 60000
+      # ??????????????????????
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # ??PSCache??????????PSCache???
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # ?????????filters????????sql?????'wall'?????
+      filters: stat,wall,log4j
+      # ??connectProperties?????mergeSql????SQL??
+      connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+      # ??DruidStatFilter
+      web-stat-filter:
+        enabled: true
+        url-pattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+      # ??DruidStatViewServlet
+      stat-view-servlet:
+        url-pattern: "/druid/*"
+        # IP???(????????????????)
+        allow:
+        # IP??? (??????deny???allow)
+        deny:
+        #  ??HTML?????Reset All???
+        reset-enable: false
+        # ???
+        login-username: admin
+        # ????
+        login-password: admin123
+        # ??????? ???????????
+        enabled: true
+
+## spring security ??
+security:
+  oauth2:
+    resource:
+      loadBalanced: true
+      token-info-uri: http://stock-auth/oauth/check_token
+    client:
+      client-id: app
+      client-secret: app
+      scope: server
+      access-token-uri: http://stock-auth/oauth/token
+      user-authorization-uri: http://stock-auth/oauth/authorize
+
+
+#mybatis ??
+mybatis:
+  mapper-locations: classpath:com/kaibutsusama/stock/system/user/dao/mapper/*xml

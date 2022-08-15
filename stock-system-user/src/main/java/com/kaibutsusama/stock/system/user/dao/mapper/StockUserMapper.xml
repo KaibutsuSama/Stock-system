@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itcast.trade.bulls.stock.user.dao.IStockUserDao">
+    <resultMap id="BaseResultMap" type="com.kaibutsusama.stock.system.entity.user.TradeUser">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="userNo" jdbcType="VARCHAR" property="userNo" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="userPwd" jdbcType="VARCHAR" property="userPwd" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="companyId" jdbcType="BIGINT" property="companyId" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="address" jdbcType="VARCHAR" property="address" />
+        <result column="lastLoginIp" jdbcType="VARCHAR" property="lastLoginIp" />
+        <result column="lastLoginTime" jdbcType="TIMESTAMP" property="lastLoginTime" />
+        <result column="status" jdbcType="TINYINT" property="status" />
+        <result column="craeteTime" jdbcType="TIMESTAMP" property="craeteTime" />
+    </resultMap>
+
+    <select id="getByUserNo" resultMap="BaseResultMap">
+        select
+            userNo, name, userPwd,
+            phone, companyId, email,
+            address, lastLoginIp, lastLoginTime,
+            status, craeteTime
+        from t_trade_user
+        where userNo = #{userNo}
+    </select>
+
+
+</mapper>
