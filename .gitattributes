@@ -1,5 +1,0 @@
-*.sql linguist-language=TSQL
-
-# Markdown
-*.md linguist-detectable=true
-*.md linguist-documentation=false
