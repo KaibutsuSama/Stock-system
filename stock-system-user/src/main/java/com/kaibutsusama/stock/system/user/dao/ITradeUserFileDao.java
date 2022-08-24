@@ -16,18 +16,40 @@ import java.util.List;
 @Repository
 public interface ITradeUserFileDao {
     /**
-     * 新增交易账号的文件对象
+     * 新增用户文件
      * @param record
      * @return
      */
     int insert(TradeUserFile record);
 
     /**
-     * 根据用户ID获取所有文件信息
+     * 更新用户文件
+     * @param record
+     * @return
+     */
+    int update(TradeUserFile record);
+
+    /**
+     * 根据用户ID获取对象
      * @param userId
      * @return
      */
     List<TradeUserFile> getByUserId(Long userId);
+
+    /**
+     * 根据文件标识ID获取对象
+     * @param fileId
+     * @return
+     */
+    TradeUserFile getByUserIdAndBizType(@Param("userId") Long userId, @Param("bizType")Integer bizType);
+
+    /**
+     * 根据文件ID获取对象
+     * @param userId
+     * @param bizType
+     * @return
+     */
+    TradeUserFile getByFileId(@Param("fileId") Long fileId);
 
 
 }

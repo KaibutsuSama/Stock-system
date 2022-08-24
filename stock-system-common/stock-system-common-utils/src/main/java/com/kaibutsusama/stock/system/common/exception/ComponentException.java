@@ -12,21 +12,21 @@ public class ComponentException extends AbstractException {
 	 */
 	private static final long serialVersionUID = 2333790764399190094L;
 
-    /**
-     * 错误码枚举信息
-     */
+	/**
+	 * 错误码枚举信息
+	 */
 	private IErrorCodeEnum errorCodeEnum;
 
-    /**
-     * 扩展的错误信息
-     */
+	/**
+	 * 扩展的错误信息
+	 */
 	private String extendErrorMessage;
 
 
-    public ComponentException(IErrorCodeEnum errorCodeEnum) {
-        super(errorCodeEnum.getCode() + ":" + errorCodeEnum.getMessage());
-        this.errorCodeEnum = errorCodeEnum;
-    }
+	public ComponentException(IErrorCodeEnum errorCodeEnum) {
+		super(errorCodeEnum.getCode() + ":" + errorCodeEnum.getMessage());
+		this.errorCodeEnum = errorCodeEnum;
+	}
 
 
 	public ComponentException(IErrorCodeEnum errorCodeEnum, String extendErrorMessage) {
@@ -37,11 +37,11 @@ public class ComponentException extends AbstractException {
 	}
 
 
-	public IErrorCodeEnum geterrorCodeEnum() {
+	public IErrorCodeEnum getErrorCodeEnum() {
 		return errorCodeEnum;
 	}
 
-	public void seterrorCodeEnum(IErrorCodeEnum errorCodeEnum) {
+	public void setErrorCodeEnum(IErrorCodeEnum errorCodeEnum) {
 		this.errorCodeEnum = errorCodeEnum;
 	}
 
@@ -54,3 +54,4 @@ public class ComponentException extends AbstractException {
 	}
 
 }
+

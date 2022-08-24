@@ -114,6 +114,18 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.kaibutsusama.trade</groupId>
+            <artifactId>stock-starter</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- Redis 缓存依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${spring-cloud-starter.version}</version>
+        </dependency>
     </dependencies>
 
 

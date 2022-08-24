@@ -9,8 +9,10 @@
 
     <title>统一认证</title>
 
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="signin.css">
+<#--    <link rel="stylesheet" href="bootstrap.min.css">-->
+<#--    <link rel="stylesheet" href="signin.css">-->
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="signin.css">
 
     <style>
       body {

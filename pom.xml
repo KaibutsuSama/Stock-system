@@ -15,6 +15,7 @@
         <module>stock-system-common</module>
         <module>stock-system-entity</module>
         <module>stock-system-oauth</module>
+        <module>stock-system-starter</module>
     </modules>
 
     <!-- 自定义属性， 统一管理版本 -->

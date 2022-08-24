@@ -1,10 +1,11 @@
 package com.kaibutsusama.stock.system.entity.user;
 
 import com.kaibutsusama.stock.system.entity.base.BaseEntity;
+import lombok.Data;
 
 import java.util.Date;
 
-
+@Data
 public class TradeUserFile extends BaseEntity {
     /**
      * 主键标识

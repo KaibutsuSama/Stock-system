@@ -2,7 +2,6 @@ package com.kaibutsusama.stock.system.common.utils;
 
 public class GlobalConstants {
 
-
     /**
      * 缓存 -- 用户信息前缀
      */
@@ -39,5 +38,10 @@ public class GlobalConstants {
      * 账户交易组， 默认组别
      */
     public static final String DEFAULT_GROUP_NAME= "默认组";
+
+    // 用户文件类型（0：身份证， 1：银行卡， 2：信用卡）
+    public static final int FILE_BIZ_TYPE_IDCARD = 0;
+    public static final int FILE_BIZ_TYPE_BANK_CARD = 1;
+    public static final int FILE_BIZ_TYPE_CREDIT_CARD = 2;
 
 }

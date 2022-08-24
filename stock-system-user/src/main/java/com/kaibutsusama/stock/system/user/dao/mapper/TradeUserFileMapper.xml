@@ -1,38 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.itcast.bulls.stock.dao.TTradeUserFileMapper">
-  <resultMap id="BaseResultMap" type="com.kaibutsusama.stock.system.user.TradeUserFile">
-    <result column="id" jdbcType="BIGINT" property="id" />
-    <result column="userId" jdbcType="BIGINT" property="userId" />
-    <result column="bizType" jdbcType="TINYINT" property="bizType" />
-    <result column="fileId" jdbcType="VARCHAR" property="fileId" />
-    <result column="filename" jdbcType="VARCHAR" property="filename" />
-    <result column="fileType" jdbcType="VARCHAR" property="fileType" />
-    <result column="filePath" jdbcType="VARCHAR" property="filePath" />
-    <result column="status" jdbcType="TINYINT" property="status" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
+<mapper namespace="com.kaibutsusama.stock.system.dao.TTradeUserFileMapper">
+  <select id="getByUserId" resultMap="BaseResultMap">
+    select id,
+           userId, bizType, fileId,
+           filename, fileType, filePath,
+           status, createTime,updateTime
+    from t_trade_user_file
+    where userId = #{userId}
+  </select>
+
+  <select id="getByFileId" resultMap="BaseResultMap">
+    select id,
+           userId, bizType, fileId,
+           filename, fileType, filePath,
+           status, createTime,updateTime
+    from t_trade_user_file
+    where fileId = #{fileId}
+  </select>
+
+  <select id="getByUserIdAndBizType" resultMap="BaseResultMap">
+    select id,
+           userId, bizType, fileId,
+           filename, fileType, filePath,
+           status, createTime,updateTime
+    from t_trade_user_file
+    where userId = #{userId} and bizType = #{bizType}
+  </select>
+
+
   <insert id="insert" parameterType="com.kaibutsusama.stock.system.entity.user.TradeUserFile">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into t_trade_user_file (userId, bizType, fileId, 
-      filename, fileType, filePath, 
-      status, createTime, updateTime
-      )
-    values (#{userId,jdbcType=BIGINT}, #{bizType,jdbcType=TINYINT}, #{fileId,jdbcType=VARCHAR}, 
-      #{filename,jdbcType=VARCHAR}, #{fileType,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR}, 
-      #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
+    insert into t_trade_user_file (userId, bizType, fileId,
+    filename, fileType, filePath,
+    status, createTime)
+    values (#{userId,jdbcType=BIGINT}, #{bizType,jdbcType=TINYINT}, #{fileId,jdbcType=VARCHAR},
+    #{filename,jdbcType=VARCHAR}, #{fileType,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR},
+    #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
 
-    <select id="getByUserId" resultMap="BaseResultMap" >
-        SELECT id, userId, bizType, fileId,
-          filename, fileType, filePath,
-          status, createTime, updateTime
-        FROM  t_trade_user_file
-        WHERE  userId = #{userId}
-    </select>
+
+  <insert id="update" parameterType="com.kaibutsusama.stock.system.entity.user.TradeUserFile">
+    update t_trade_user_file
+    set
+      fileId = #{fileId},
+      filename = #{filename},
+      fileType = #{fileType}
+    where
+      id = #{id}
+  </insert>
 
 </mapper>

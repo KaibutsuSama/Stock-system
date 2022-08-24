@@ -8,7 +8,10 @@ public enum ApplicationErrorCodeEnum implements IErrorCodeEnum {
     FAILURE("300", "系统异常"),
     SYS_BUSY("301", "系统繁忙, 请稍候重试!"),
     SYS_FLOW("302", "系统峰值， 请稍后请求！"),
+    SYS_NOT_VALID_TOKEN("303", "未能获取有效的TOKEN信息!"),
+    SYS_NOT_ACCESS_USER("304", "未能获取有效的用户信息!"),
     PARAMS_NOT_VALID("501", "参数不合法!"),
+    PARAMS_FILE_NOT_NULL("502", "文件不能为空!"),
 
 
     COMPONENT_LOAD_PROPERTIES_OBJ_HAD_EXIST("000001", "配置文件加载类已经存在" ),
@@ -18,6 +21,7 @@ public enum ApplicationErrorCodeEnum implements IErrorCodeEnum {
     USER_PWD_ERROR(IErrorCodeEnum.MODULE_USER, "100004", "用户密码错误！"),
     USER_EXISTS(IErrorCodeEnum.MODULE_USER, "100005", "用户已存在！"),
     USER_COMPANY_NOT_FOUND(IErrorCodeEnum.MODULE_USER, "100006", "公司不存在！"),
+    USER_FILE_NOT_FOUND(IErrorCodeEnum.MODULE_USER, "100007", "用户文件未找到！"),
     ;
 
     /**

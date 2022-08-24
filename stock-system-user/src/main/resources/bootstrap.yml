@@ -10,7 +10,7 @@ spring:
       config:
         server-addr: 192.168.50.130:8848
 
-  # ?????? ??Druid
+  # Druid
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -18,50 +18,37 @@ spring:
     password: 123456
     url: jdbc:mysql://192.168.50.130:3306/stock_system?characterEncoding=UTF-8&serverTimezone=UTC
     druid:
-      # ????????
-      # ???????????
       initial-size: 5
       min-idle: 5
       maxActive: 20
-      # ?????????????
       maxWait: 60000
-      # ???????????????????????????????
       timeBetweenEvictionRunsMillis: 60000
-      # ??????????????????????
       minEvictableIdleTimeMillis: 300000
       validationQuery: SELECT 1 FROM DUAL
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
-      # ??PSCache??????????PSCache???
       poolPreparedStatements: true
       maxPoolPreparedStatementPerConnectionSize: 20
-      # ?????????filters????????sql?????'wall'?????
       filters: stat,wall,log4j
-      # ??connectProperties?????mergeSql????SQL??
       connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
-      # ??DruidStatFilter
       web-stat-filter:
         enabled: true
         url-pattern: "/*"
         exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
-      # ??DruidStatViewServlet
       stat-view-servlet:
         url-pattern: "/druid/*"
-        # IP???(????????????????)
         allow:
-        # IP??? (??????deny???allow)
         deny:
-        #  ??HTML?????Reset All???
         reset-enable: false
-        # ???
         login-username: admin
-        # ????
         login-password: admin123
-        # ??????? ???????????
         enabled: true
-
-## spring security ??
+  redis:
+    host: 192.168.50.130
+    password: 123456
+    port: 6379
+## spring security
 security:
   oauth2:
     resource:
@@ -75,6 +62,16 @@ security:
       user-authorization-uri: http://stock-auth/oauth/authorize
 
 
-#mybatis ??
+#mybatis
 mybatis:
   mapper-locations: classpath:com/kaibutsusama/stock/system/user/dao/mapper/*xml
+
+ceph:
+  username: cephtester:subtester
+  password: 123456
+  authUrl: http://192.168.50.130:7480/auth/1.0
+  defaultContainerName: user_datainfo
+
+snowflake:
+  workerId: 1
+  datacenterId: 1

@@ -47,7 +47,7 @@ public class StockUserOpenController {
             result = ApiRespResult.success(newTradeUser);
         } catch (BusinessException e) {
             log.error(e.getMessage(), e);
-            result = ApiRespResult.error(e.getErrorCodeEnum());
+            result = ApiRespResult.error(e.geterrorCodeEnum());
         } catch (ComponentException e) {
             log.error(e.getMessage(), e);
             result = ApiRespResult.error(e.getErrorCodeEnum());
